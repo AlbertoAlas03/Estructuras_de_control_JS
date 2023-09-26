@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="../css/styles.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="icon" href="../img/js.png" sizes="32x32" type="image/png" />
-    <title>Utilizando estructuras de control</title>
+    <title>Stock de alimentos</title>
 </head>
 
 <body>
@@ -35,7 +38,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="promedioNotas.html" class="nav-link text-white active">
+                    <a href="promedioNotas.html" class="nav-link text-white">
                         <i class="bi bi-file-earmark-medical" role="img" aria-label="Promedio"></i>
                         Promedio notas
                     </a>
@@ -53,7 +56,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="stock.html" class="nav-link text-white">
+                    <a href="stock.html" class="nav-link text-white active">
                         <i class="bi bi-basket" role="img" aria-label="Stock"></i>
                         Stock
                     </a>
@@ -63,34 +66,48 @@
         <div class="d-flex flex-column flex-shrink-0 p-3 colum-container contenedor">
             <div class="container-fluid py-5">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="h-100 p-4 bg-light border rounded-3">
-                            <h3>Registro de calificaciones</h3>
+                            <h3>Registro de Productos</h3>
+                            <hr>
                             <form onsubmit="return false">
                                 <div class="row mb-3">
-                                    <label for="inputNumberStudents" class="col-sm-4 col-form-label">Ingrese el numero
-                                        de estudiantes</label>
-                                    <div class="col-sm-8">
-                                        <input type="number" class="form-control" id="inputNumberStudents" value="1">
+                                    <label for="inputAlimento" class="col-sm-3 col-form-label">Nombre del producto</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputAlimento">
                                     </div>
                                 </div>
-                                <button type="button" class="btn btn-success" id="idBtnPromedio">
-                                    <i class="bi bi-calculator-fill" height="16" width="16"></i>
-                                    Generar
+                                <div class="row mb-3">
+                                    <label for="Precio" class="col-sm-3 col-form-label">Precio del producto</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" id="Precio">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-success" id="BtnAceptar">
+                                    <i class="bi bi-check2-all" height="16" width="16"></i>
+                                    Aceptar
+                                </button>
+                                <button type="button" class="btn btn-warning" id="BtnSum">
+                                    <i class="bi bi-clipboard2-data" height="16" width="16"></i>
+                                    Calcular total de la venta
+                                </button>
+                                <button type="button" class="btn btn-primary" id="BtnNew">
+                                    <i class="bi bi-plus-lg" height="16" width="16"></i>
+                                    Nueva venta
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 py-5">
-                    <div id="idContainerStudents"></div> <!--Aqui se mostraran los resultados-->
-                </div>
+                <hr>
+                <h3>Información de la venta</h3>
+                <div id="ContainerProducts" style="margin-top: 20px;"></div> <!--Resultados aqui-->
+                <div id="local">Ninguno...</div>
+                <div id="ContainerSum"></div>
             </div>
         </div>
     </main>
-
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/promedioNotas.js" defer></script>
+    <script src="../js/stock.js" defer></script>
 </body>
 
 </html>
