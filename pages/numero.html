@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link rel="icon" href="../img/js.png" sizes="32x32" type="image/png" />
+    <title>Operación con número</title>
+</head>
+
+<body>
+    <main class="d-flex flex-nowrap">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark nav-bar">
+            <a href="../index.html"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <img src="../img/js.png" alt="" width="32" height="32" class="me-2" />
+
+                <span class="fs-4">JavaScript</span>
+            </a>
+            <hr />
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="registroAcademico.html" class="nav-link text-white ">
+                        <i class="bi bi-file-spreadsheet" role="img" aria-label="RegistroAcademico"></i>
+                        Registro académico
+                    </a>
+                </li>
+                <li>
+                    <a href="tablasMultiplicar.html" class="nav-link text-white">
+                        <i class="bi bi-person-workspace" role="img" aria-label="TablasMultiplicar"></i>
+                        Tablas de multiplicar
+                    </a>
+                </li>
+                <li>
+                    <a href="promedioNotas.html" class="nav-link text-white">
+                        <i class="bi bi-file-earmark-medical" role="img" aria-label="Promedio"></i>
+                        Promedio notas
+                    </a>
+                </li>
+                <li>
+                    <a href="arreglo.html" class="nav-link text-white">
+                        <i class="bi bi-box" role="img" aria-label="Arreglo"></i>
+                        Arreglo
+                    </a>
+                </li>
+                <li>
+                    <a href="numero.html" class="nav-link text-white active">
+                        <i class="bi bi-123" role="img" aria-label="Numero"></i>
+                        Número
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex flex-column flex-shrink-0 p-3 colum-container contenedor">
+            <div class="container-fluid py-5">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="h-100 p-4 bg-light border rounded-3">
+                            <h3>Operaciones con un número</h3>
+                            <form onsubmit="return false">
+                                <div class="row mb-3">
+                                    <label for="inputNumber" class="col-sm-4 col-form-label">Ingrese un número: </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputNumber">
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-success" id="BtnAccept">
+                                    <i class="bi bi-check-all" height="16" width="16"></i>
+                                    Aceptar
+                                </button>
+                                <button type="button" class="btn btn-primary" id="BtnReady">
+                                   <i class="bi bi-arrow-up-circle-fill" height="16" width="16"></i>
+                                    Ingresa un numero
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="container-fluid py-5">
+                    <div class="row">
+                        <div class="col-md-4" style="margin-bottom: 20px;">
+                            <div class="h-100 p-4 bg-light rounded-3">
+                                <h4>Cantidad de cifras</h4>
+                                <hr>
+                                <div id="CantidadCifras"></div> <!--Aca mostramos el resultado-->
+                                <hr>
+                                <button type="button" class="btn btn-info" id="BtnCantidadCifras">
+                                    <i class="bi bi-box-arrow-left" height="16" width="16"></i>
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-bottom: 20px;">
+                            <div class="h-100 p-4 bg-light rounded-3">
+                                <h4>Cantidad de cifras pares</h4>
+                                <hr>
+                                <div id="CantidadCifrasPares"></div> <!--Aca mostramos el resultado-->
+                                <hr>
+                                <button type="button" class="btn btn-info" id="BtnCantidadCifrasPares">
+                                    <i class="bi bi-box-arrow-left" height="16" width="16"></i>
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-bottom: 20px;">
+                            <div class="h-100 p-4 bg-light rounded-3">
+                                <h4>Cantidad de cifras impares</h4>
+                                <hr>
+                                <div id="CantidadCifrasImpares"></div> <!--Aca mostramos el resultado-->
+                                <hr>
+                                <button type="button" class="btn btn-info" id="BtnCantidadCifrasImpares">
+                                    <i class="bi bi-box-arrow-left" height="16" width="16"></i>
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-bottom: 20px;">
+                            <div class="h-100 p-4 bg-light rounded-3">
+                                <h4>Suma de cifras pares</h4>
+                                <hr>
+                                <div id="SumaCifrasPares"></div> <!--Aca mostramos el resultado-->
+                                <hr>
+                                <button type="button" class="btn btn-info" id="BtnSumaCifrasPares">
+                                    <i class="bi bi-box-arrow-left" height="16" width="16"></i>
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="margin-bottom: 20px;">
+                            <div class="h-100 p-4 bg-light rounded-3">
+                                <h4>Suma de cifras Impares</h4>
+                                <hr>
+                                <div id="SumaCifrasImpares"></div> <!--Aca mostramos el resultado-->
+                                <hr>
+                                <button type="button" class="btn btn-info" id="BtnSumaCifrasImpares">
+                                    <i class="bi bi-box-arrow-left" height="16" width="16"></i>
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="h-100 p-4 bg-light rounded-3">
+                                <h4>Suma de todas las cifras</h4>
+                                <hr>
+                                <div id="SumaCifras"></div> <!--Aca mostramos el resultado-->
+                                <hr>
+                                <button type="button" class="btn btn-info" id="BtnCifras">
+                                    <i class="bi bi-box-arrow-left" height="16" width="16"></i>
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="h-100 p-4 bg-light rounded-3">
+                                <h4>Cifra mayor</h4>
+                                <hr>
+                                <div id="CifraMayor"></div> <!--Aca mostramos el resultado-->
+                                <hr>
+                                <button type="button" class="btn btn-info" id="BtnCifraMayor">
+                                    <i class="bi bi-box-arrow-left" height="16" width="16"></i>
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="h-100 p-4 bg-light rounded-3">
+                                <h4>Cifra menor</h4>
+                                <hr>
+                                <div id="CifraMenor"></div> <!--Aca mostramos el resultado-->
+                                <hr>
+                                <button type="button" class="btn btn-info" id="BtnCifraMenor">
+                                    <i class="bi bi-box-arrow-left" height="16" width="16"></i>
+                                    Mostrar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/numeros.js" defer></script>
+</body>
+
+</html>
